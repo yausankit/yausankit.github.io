@@ -2,25 +2,25 @@
     DEFAULT THEME - DARK VERSION
     ========================================================================== */
 
-/* Color codes used for the theme */
-$primary-color              : #0ea1c5;
-$gray                       : #7a8288;
+/* Color codes used for the theme — Claude classic palette (dark) */
+$primary-color              : #D97757;
+$gray                       : #8B7E74;
 $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
 
-$background                 : #474747;
-$background-light           : mix(#fff, $background, 80%);
-$background-lighter         : mix(#fff, $background, 90%);
-$text                       : #ffffff;
-$link                       : #0ea1c5;
-$link-dark                  : mix(#000, $link, 25%);
-$link-light                 : mix(#fff, $link, 25%);
+$background                 : #2A2519;
+$background-light           : #3D3929;
+$background-lighter         : #4A4538;
+$text                       : #E8E0D8;
+$link                       : #D97757;
+$link-dark                  : #C4663E;
+$link-light                 : #E8956F;
 
 /* Color codes used for the site */
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
-$notice-color               : #7a8288;
+$danger-color               : #D97757;
+$info-color                 : #D97757;
+$notice-color               : #8B7E74;
 $success-color              : #62c462;
 $warning-color              : #f89406;
 
@@ -34,15 +34,15 @@ $navicon-height             : 4px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
-/* Dark theme for the site */
+/* Dark theme for the site — Claude warm dark */
 html[data-theme="dark"] {
     --global-base-color                 : #{$primary-color};
     --global-bg-color                   : #{$background};
     --global-footer-bg-color            : #{$background};
-    --global-border-color               : #{$light-gray};
+    --global-border-color               : #{$background-lighter};
     --global-dark-border-color          : #{$background-light};
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
+    --global-code-background-color      : #{$background-light};
+    --global-code-text-color            : #{$text};
     --global-fig-caption-color          : #{$light-gray};
     --global-link-color                 : #{$link};
     --global-link-color-hover           : #{$link-dark};
@@ -50,7 +50,7 @@ html[data-theme="dark"] {
     --global-masthead-link-color        : #{$text};
     --global-masthead-link-color-hover  : #{$primary-color};
     --global-text-color                 : #{$text};
-    --global-text-color-light           : #f3f3f3;
+    --global-text-color-light           : #C4B9AC;
     --global-thead-color                : #{$background-lighter};
 }
 
