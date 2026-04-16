@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Chenjie Qiu (Sankit Yau)"
+title                    : "Chenjie Qiu"
 title_separator          : "-"
 name                     : &name "Chenjie Qiu"
 description              : &description "Chenjie Qiu's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
@@ -23,13 +23,13 @@ repository               : "yausankit/yausankit.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Chenjie Qiu (Sankit Yau)"
+  name             : "Chenjie Qiu"
   pronouns         : # example: "she/her"  
   bio              : "Short biography for the left-hand sidebar"
   location         : "Earth"
   employer         : "Red Brick University"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "yausankit@gmail.com"
 
   # Academic websites
   academia         : # URL
