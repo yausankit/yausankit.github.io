@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Your Name / Site Title"
+title                    : "Chenjie Qiu (Sankit Yau)"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
+name                     : &name "Chenjie Qiu"
+description              : &description "Chenjie Qiu's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://yausankit.github.io
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "yausankit/yausankit.github.io"
@@ -23,7 +23,7 @@ repository               : "yausankit/yausankit.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Chenjie Qiu (Sankit Yau)"
   pronouns         : # example: "she/her"  
   bio              : "Short biography for the left-hand sidebar"
   location         : "Earth"
