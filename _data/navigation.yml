@@ -9,10 +9,10 @@
 
 main:
   - title: "About Me"
-    url: /
+    url: /#about-me
 
   - title: "Publications"
-    url: /publications/
+    url: /#publications
 
   - title: "Education"
-    url: /education/
+    url: /#education
