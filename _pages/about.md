@@ -23,23 +23,23 @@ I am a Master's student at Guangdong University of Technology, working in the Da
 {% endif %}
 
 {% if site.publication_category %}
-  {% for category in site.publication_category %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h3>{{ category[1].title }}</h3><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
+{% for category in site.publication_category %}
+{% assign title_shown = false %}
+{% for post in site.publications reversed %}
+{% if post.category != category[0] %}
+{% continue %}
+{% endif %}
+{% unless title_shown %}
+<h3>{{ category[1].title }}</h3><hr />
+{% assign title_shown = true %}
+{% endunless %}
+{% include archive-single.html %}
+{% endfor %}
+{% endfor %}
 {% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+{% for post in site.publications reversed %}
+{% include archive-single.html %}
+{% endfor %}
 {% endif %}
 
 <h2 id="education">Education</h2>
