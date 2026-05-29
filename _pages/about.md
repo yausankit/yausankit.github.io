@@ -14,7 +14,7 @@ I am a Master's student at Guangdong University of Technology, working in the Da
 ## Research Interests
 
 - **Knowledge Management & LLM Memory**: Exploring how large language models organize, retrieve, and reason over external knowledge as memory, with recent work on GraphRAG and table question answering.
-- **Affective Computing & LLM Interpretability**: Investigating how large language models internally represent emotion concepts — including emotion vector extraction, activation steering, and the geometry of affective representations within neural networks.
+- **Affective Computing & LLM Interpretability**: Studying how emotion concepts are represented inside large language models, with a focus on emotion vectors, activation steering, and the structure of affective representations.
 
 <h2 id="publications">Publications</h2>
 
