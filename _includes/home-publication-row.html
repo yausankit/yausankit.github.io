@@ -2,7 +2,12 @@
 One publication as a homepage rail row. Expects `post` from the calling loop,
 same convention as archive-single.html.
 
-Front matter consumed: date, venue, title, link, excerpt.
+Front matter consumed: date, venue, title, link, excerpt, authors, contribution.
+
+`authors` is a markdown string so the CV's bolding of the site owner survives
+verbatim ("B. Chen, **C. Qiu**, ..."); it is markdownified and unwrapped the
+same way the title is. Both new fields are optional, so a publication without
+them renders exactly as before.
 {%- endcomment -%}
 {% include base_path %}
 
@@ -29,8 +34,14 @@ Front matter consumed: date, venue, title, link, excerpt.
   <div class="v">
     {% if post.venue %}<span class="tag">{{ post.venue }}</span>{% endif %}
     <h3><a href="{{ pub_href }}">{{ pub_title }}</a></h3>
+    {% if post.authors %}
+      <p class="authors">{{ post.authors | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+    {% endif %}
     {% if post.excerpt %}
       <p>{{ post.excerpt | markdownify | strip_html | strip_newlines | strip }}</p>
+    {% endif %}
+    {% if post.contribution %}
+      <p class="contribution">{{ post.contribution | markdownify | strip_html | strip_newlines | strip }}</p>
     {% endif %}
   </div>
 </div>

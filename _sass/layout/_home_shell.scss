@@ -411,6 +411,33 @@ body.home-shell {
         font-size: 0.96rem;
         color: var(--fg-soft);
       }
+
+      /* A publication row stacks up to three paragraphs (authors, abstract
+         line, role). The design only ever had one, so it zeroed the margin;
+         restore spacing between siblings only. */
+      p + p {
+        margin-top: 0.45rem;
+      }
+
+      /* Author list. Mono keeps it from reading as prose, and the owner's
+         name is bolded in the front matter rather than matched here. */
+      .authors {
+        font: 400 0.78rem/1.6 var(--mono);
+        color: var(--fg-faint);
+
+        strong {
+          color: var(--fg-soft);
+          font-weight: 600;
+        }
+      }
+
+      /* Role on the paper, italic so it does not read as part of the
+         abstract line above it. */
+      .contribution {
+        font-size: 0.88rem;
+        font-style: italic;
+        color: var(--fg-faint);
+      }
     }
 
     a {

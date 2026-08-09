@@ -34,11 +34,11 @@ redirect_from:
   <h2>Research Interests</h2>
   <div class="rows">
     <div class="row">
-      <div class="k">Knowledge-Aware LLMs</div>
-      <div class="v"><p>Developing methods for language models to organize, retrieve, and reason over structured knowledge from graphs, tables, long documents, and dialogue history.</p></div>
+      <div class="k">Knowledge-Aware LLM Systems</div>
+      <div class="v"><p>Developing methods for language models to organize, retrieve, and reason over structured external knowledge from graphs, tables, long documents, and dialogue history, while also exploring latent-space memory and retrieval through model-internal representations.</p></div>
     </div>
     <div class="row">
-      <div class="k">Affect-Aware LLMs</div>
+      <div class="k">Affect-Aware LLM Systems</div>
       <div class="v"><p>Studying how emotion-related and user-state signals are represented, retained, and carried across multi-turn dialogue, with a focus on internal representations and affective carryover.</p></div>
     </div>
   </div>
