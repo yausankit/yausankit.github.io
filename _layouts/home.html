@@ -1,0 +1,102 @@
+---
+layout: compress
+---
+
+{%- comment -%}
+Homepage shell: sticky left rail (skyline + identity + section nav) beside the
+main column. Styled entirely by _sass/layout/_home_shell.scss.
+
+Deliberately NOT built on _layouts/default.html:
+
+  * The design is specified in rem against a 16px root, and layout/reset.scss
+    pushes html to 18px at $medium. The class on <html> lets the stylesheet pin
+    it back, and only a top-level layout can put a class there.
+  * No masthead. The rail's own nav carries the same links, so including it
+    would give the page two navs listing the same four sections.
+  * scripts.html is skipped: it loads main.min.js, which is jQuery + greedy-nav
+    + the theme toggle. Greedy-nav needs a masthead, and the toggle needs the
+    button that lives in one. Analytics and comments are both off in _config.yml
+    so those includes render empty. What this page does need is ~60 lines of
+    vanilla JS, loaded on its own below.
+
+Content comes from _pages/about.md. The band and identity strings read from that
+page's front matter, so this layout stays reusable.
+{%- endcomment -%}
+
+{% include base_path %}
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js home-shell">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
+
+  <body class="home-shell">
+
+    {% include browser-upgrade.html %}
+
+    <div class="shell">
+      <aside>
+        {% include home-skyline.html %}
+
+        <div class="ident">
+          <h1>{{ site.author.name | default: site.title }}<span class="caret" aria-hidden="true"></span></h1>
+          {% if page.role %}<p class="role">{{ page.role }}</p>{% endif %}
+        </div>
+
+        <nav aria-label="Sections">
+          <ol>
+            {%- for item in site.data.navigation.main -%}
+              {%- comment -%}
+                navigation.yml doubles as the masthead source for every other
+                page, so entries are absolute ("/#publications"). Take the
+                fragment for the rail's in-page links, and fall back to the
+                whole URL for any entry that has no fragment, so adding a
+                cross-page link here degrades to a normal link instead of
+                emitting href="/cv/" as an anchor.
+              {%- endcomment -%}
+              {%- if item.url contains "#" -%}
+                {%- assign frag = item.url | split: "#" | last -%}
+                {%- assign href = "#" | append: frag -%}
+              {%- else -%}
+                {%- assign href = item.url | prepend: base_path -%}
+              {%- endif -%}
+              <li><a href="{{ href }}">{{ item.title }}</a></li>
+            {%- endfor -%}
+          </ol>
+        </nav>
+
+        <div class="foot">
+          {% if site.author.email %}<a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>{% endif %}
+          {% if site.author.orcid %}<a href="{{ site.author.orcid }}" rel="me noopener">ORCID</a>{% endif %}
+        </div>
+      </aside>
+
+      <main>
+        {% if page.headline %}
+          <div class="band">
+            <h2>{{ page.headline }}</h2>
+            {% if page.tagline %}<p>{{ page.tagline }}</p>{% endif %}
+            {% if page.facts %}
+              <div class="kv">
+                {%- for fact in page.facts -%}
+                  <div>{{ fact.label }}<b>{{ fact.value }}</b></div>
+                {%- endfor -%}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {{ content }}
+
+        <footer>
+          &copy; {{ site.time | date: "%Y" }} {{ site.author.name | default: site.title }}
+        </footer>
+      </main>
+    </div>
+
+    <script src="{{ base_path }}/assets/js/home.js" defer></script>
+
+  </body>
+</html>

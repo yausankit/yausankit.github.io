@@ -1,0 +1,36 @@
+{%- comment -%}
+One publication as a homepage rail row. Expects `post` from the calling loop,
+same convention as archive-single.html.
+
+Front matter consumed: date, venue, title, link, excerpt.
+{%- endcomment -%}
+{% include base_path %}
+
+{%- if post.id -%}
+  {%- assign pub_title = post.title | markdownify | remove: "<p>" | remove: "</p>" | strip -%}
+{%- else -%}
+  {%- assign pub_title = post.title -%}
+{%- endif -%}
+
+{%- comment -%}
+  Title goes to the published paper when there is one, since that is what a
+  reader wants; otherwise to the generated publication page.
+{%- endcomment -%}
+{%- if post.link -%}
+  {%- assign pub_href = post.link -%}
+{%- else -%}
+  {%- assign pub_href = post.url | prepend: base_path -%}
+{%- endif -%}
+
+<div class="row">
+  <div class="k">
+    {{ post.date | date: "%Y" }} &middot; {{ post.date | date: "%B" }}
+  </div>
+  <div class="v">
+    {% if post.venue %}<span class="tag">{{ post.venue }}</span>{% endif %}
+    <h3><a href="{{ pub_href }}">{{ pub_title }}</a></h3>
+    {% if post.excerpt %}
+      <p>{{ post.excerpt | markdownify | strip_html | strip_newlines | strip }}</p>
+    {% endif %}
+  </div>
+</div>

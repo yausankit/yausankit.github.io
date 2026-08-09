@@ -21,3 +21,8 @@ package-lock.json
 
 # Ignore files created by MacOS
 .DS_Store
+
+# Local design workshop: 13 palette pages + generators, ~7MB, none of it served.
+# The one output the live site needs is _includes/home-skyline.html, which IS
+# committed. Ignored here so `git add .` cannot sweep the workshop into a commit.
+design-concepts/

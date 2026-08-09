@@ -25,5 +25,30 @@
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
+    {%- comment -%}
+    Only emitted where its CSS applies. Every rule for this mark lives under
+    body.home-masthead in _sass/layout/_home_shell.scss's sibling
+    _home_masthead.scss, so on a page without that class the SVG would fall back
+    to the default 300x150 replaced-element box with black fills. Guarded rather
+    than deleted: the mark is finished work waiting on a decision about whether
+    the masthead restyle goes site-wide.
+    {%- endcomment -%}
+    {%- if page.body_class contains "home-masthead" -%}
+    <svg class="masthead__mark" viewBox="0 0 104 80" role="img" aria-label="Research network mark">
+      <g class="masthead__mark__edges" aria-hidden="true">
+        <path d="M16 20 52 10 88 26 76 62 36 70 16 20Z" />
+        <path d="M16 20 52 40 88 26M52 10 52 40 76 62M36 70 52 40" />
+      </g>
+      <g class="masthead__mark__node" aria-hidden="true">
+        <rect x="12" y="16" width="8" height="8" />
+        <rect x="48" y="6" width="8" height="8" />
+        <rect x="84" y="22" width="8" height="8" />
+        <rect x="72" y="58" width="8" height="8" />
+        <rect x="32" y="66" width="8" height="8" />
+      </g>
+      <rect class="masthead__mark__hub" x="47" y="35" width="10" height="10" />
+      <circle class="masthead__mark__pulse" cx="52" cy="40" r="15" aria-hidden="true" />
+    </svg>
+    {%- endif -%}
   </div>
 </div>

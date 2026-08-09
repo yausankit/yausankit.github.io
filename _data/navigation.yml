@@ -7,9 +7,17 @@
 # NOTE that only one of the CV options should be selected, the first is for the
 #      Markdown formatted page while the second is generated using JSON.
 
+# This list also drives the homepage rail nav (_layouts/home.html), which takes
+# the fragment from each URL. Keep entries pointing at "/#<section-id>" so both
+# consumers work; those ids live in _pages/about.md. An entry without a "#" still
+# renders in the rail, as an ordinary cross-page link.
+
 main:
   - title: "About Me"
-    url: /#about-me
+    url: /#about
+
+  - title: "Research Interests"
+    url: /#interests
 
   - title: "Publications"
     url: /#publications

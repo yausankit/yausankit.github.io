@@ -1,0 +1,179 @@
+/* ==========================================================================
+   HOMEPAGE MASTHEAD
+   Scoped to <body class="home-masthead">, which only /_pages/about.md sets.
+   Every selector below is nested inside that class so the chrome on other
+   pages is untouched.
+   ========================================================================== */
+
+body.home-masthead {
+
+  /* The mark sits in normal flow beside the nav, so greedy-nav can measure a
+     smaller $nav.width() and reflow links into its dropdown instead of being
+     overlapped. See assets/js/plugins/jquery.greedy-navigation.js */
+  .masthead__inner-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    &::after {
+      content: none;
+    }
+  }
+
+  .masthead__menu {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .greedy-nav {
+    min-width: 0;
+  }
+
+  /* --------------------------------------------------------------------------
+     Navigation: monospaced, high contrast, tight but not cramped
+     -------------------------------------------------------------------------- */
+
+  .greedy-nav a {
+    font-family: $monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--global-text-color);
+    margin: 0 0.75rem;
+    padding: 0.6rem 0;
+    transition: color 0.15s ease-out;
+  }
+
+  .greedy-nav .visible-links {
+    .masthead__menu-item--lg {
+      padding-right: 1.5rem;
+
+      a {
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        text-transform: none;
+      }
+    }
+
+    a {
+      &:before {
+        height: 2px;
+        background: var(--global-base-color);
+      }
+
+      &:hover {
+        color: var(--global-base-color);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--global-base-color);
+        outline-offset: 4px;
+      }
+    }
+
+    .selected a {
+      color: var(--global-text-color);
+      font-weight: 700;
+      border-bottom: 0;
+
+      &:before {
+        transform: scaleX(1);
+        background: var(--global-base-color);
+      }
+    }
+  }
+
+  .greedy-nav button:focus-visible {
+    outline: 2px solid var(--global-base-color);
+    outline-offset: 2px;
+  }
+
+  .greedy-nav .hidden-links a {
+    font-size: 0.8rem;
+    letter-spacing: 0.07em;
+    padding: 0.7rem 1.1rem;
+    margin: 0;
+  }
+}
+
+/* ==========================================================================
+   HOMEPAGE MASTHEAD MARK
+   A single geometric asset: a six-node lattice on a 13px grid, drawn in
+   currentColor so it tracks every theme and both light/dark modes. The only
+   motion is one slow pulse on the hub ring.
+   ========================================================================== */
+
+body.home-masthead {
+
+  .masthead__mark {
+    flex: 0 0 auto;
+    display: block;
+    width: 52px;
+    height: 40px;
+    color: var(--global-text-color);
+    overflow: visible;
+  }
+
+  .masthead__mark__edges {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.25;
+    stroke-linecap: square;
+    opacity: 0.4;
+  }
+
+  .masthead__mark__node {
+    fill: currentColor;
+    opacity: 0.85;
+  }
+
+  .masthead__mark__hub {
+    fill: var(--global-base-color);
+  }
+
+  .masthead__mark__pulse {
+    fill: none;
+    stroke: var(--global-base-color);
+    stroke-width: 1.25;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: masthead-mark-pulse 5s ease-in-out infinite;
+  }
+
+  @media (max-width: 600px) {
+    .masthead__inner-wrap {
+      gap: 0.9rem;
+    }
+
+    .masthead__mark {
+      width: 39px;
+      height: 30px;
+    }
+
+    .greedy-nav .visible-links .masthead__menu-item--lg {
+      padding-right: 1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .masthead__mark__pulse {
+      animation: none;
+      opacity: 0.35;
+    }
+  }
+}
+
+@keyframes masthead-mark-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 0.06;
+    transform: scale(1.28);
+  }
+}
