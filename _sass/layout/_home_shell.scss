@@ -26,6 +26,54 @@
    instead of assumed.
    ========================================================================== */
 
+@font-face {
+  font-family: "Oxanium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/site/oxanium-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Oxanium";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/site/oxanium-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Oxanium";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/site/oxanium-latin-700-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/site/ibm-plex-sans-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/site/ibm-plex-sans-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/site/ibm-plex-sans-latin-600-normal.woff2") format("woff2");
+}
+
 /* 1. Hold the root at the scale the design was drawn at. */
 html.home-shell {
   font-size: 16px;
@@ -73,6 +121,8 @@ body.home-shell {
   --sky-ripple: #3e688a;
   --sky-star: #ffffff;
 
+  --display: "Oxanium", "Arial Narrow", sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
   --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
 
   /* 2. Undo layout/base's masthead + sticky-footer padding. */
@@ -80,7 +130,7 @@ body.home-shell {
   margin: 0;
   background: var(--bg);
   color: var(--fg);
-  font: 400 17px/1.72 Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font: 400 17px/1.7 var(--body);
 
   a {
     color: var(--accent);
@@ -93,9 +143,10 @@ body.home-shell {
   h2,
   h3 {
     margin: 0;
-    font-family: inherit;
+    font-family: var(--display);
     font-weight: 600;
     line-height: 1.3;
+    letter-spacing: 0;
   }
 
   p {
@@ -170,8 +221,9 @@ body.home-shell {
 
   .ident h1 {
     margin: 0;
+    font-weight: 700;
     font-size: 1.35rem;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
   }
 
   .ident .role {
@@ -213,8 +265,8 @@ body.home-shell {
     padding: 0.5rem 0.65rem;
     border-radius: 3px;
     color: var(--fg-soft);
-    font: 500 0.78rem/1.4 var(--mono);
-    letter-spacing: 0.04em;
+    font: 500 0.78rem/1.4 var(--display);
+    letter-spacing: 0;
     border-left: 2px solid transparent;
     transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
 
@@ -257,7 +309,7 @@ body.home-shell {
     border-top: 1px solid var(--line);
     font: 500 0.7rem/1.7 var(--mono);
     color: var(--fg-faint);
-    letter-spacing: 0.06em;
+    letter-spacing: 0;
 
     a {
       color: var(--fg-faint);
@@ -286,7 +338,7 @@ body.home-shell {
     h2 {
       margin: 0;
       font-size: 1.65rem;
-      letter-spacing: -0.015em;
+      letter-spacing: 0;
     }
 
     p {
@@ -321,8 +373,8 @@ body.home-shell {
 
     > h2 {
       margin: 0 0 1.5rem;
-      font: 600 0.76rem/1.3 var(--mono);
-      letter-spacing: 0.18em;
+      font: 600 0.76rem/1.3 var(--display);
+      letter-spacing: 0;
       text-transform: uppercase;
       color: var(--accent);
     }
@@ -394,7 +446,7 @@ body.home-shell {
     > .k {
       font: 500 0.72rem/1.6 var(--mono);
       color: var(--fg-faint);
-      letter-spacing: 0.08em;
+      letter-spacing: 0;
       text-transform: uppercase;
     }
 
@@ -456,7 +508,7 @@ body.home-shell {
     border: 1px solid var(--accent-dim);
     color: var(--accent);
     font: 500 0.68rem/1.5 var(--mono);
-    letter-spacing: 0.1em;
+    letter-spacing: 0;
     text-transform: uppercase;
   }
 
@@ -465,7 +517,7 @@ body.home-shell {
     padding: 1.6rem 3rem;
     font-size: 0.72rem;
     color: var(--fg-faint);
-    letter-spacing: 0.08em;
+    letter-spacing: 0;
   }
 
   ::selection {
