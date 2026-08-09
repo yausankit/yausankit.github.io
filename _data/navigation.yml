@@ -4,9 +4,6 @@
 # links. Removing a link prevents it from showing in the header, but does not
 # prevent it from being included in the site.
 #
-# NOTE that only one of the CV options should be selected, the first is for the
-#      Markdown formatted page while the second is generated using JSON.
-
 # This list also drives the homepage rail nav (_layouts/home.html), which takes
 # the fragment from each URL. Keep entries pointing at "/#<section-id>" so both
 # consumers work; those ids live in _pages/about.md. An entry without a "#" still

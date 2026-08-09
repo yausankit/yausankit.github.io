@@ -52,9 +52,7 @@ page's front matter, so this layout stays reusable.
                 navigation.yml doubles as the masthead source for every other
                 page, so entries are absolute ("/#publications"). Take the
                 fragment for the rail's in-page links, and fall back to the
-                whole URL for any entry that has no fragment, so adding a
-                cross-page link here degrades to a normal link instead of
-                emitting href="/cv/" as an anchor.
+                whole URL for any entry that has no fragment.
               {%- endcomment -%}
               {%- if item.url contains "#" -%}
                 {%- assign frag = item.url | split: "#" | last -%}
