@@ -20,7 +20,7 @@ redirect_from:
   <h2>About Me</h2>
   <div class="about-layout">
     <div class="prose">
-      <p>I hold an <strong>M.Eng. in Software Engineering from Guangdong University of Technology</strong> and am based in Guangzhou. My research sits at the intersection of natural language processing, retrieval, and interpretability for large language models.</p>
+      <p>I hold an M.Eng. in Software Engineering from Guangdong University of Technology and am based in Guangzhou. My research sits at the intersection of natural language processing, retrieval, and interpretability for large language models.</p>
       <p>I study how models select and use structured evidence from graphs, tables, long documents, and dialogue history, as well as how affective and user-state signals are represented and carried across turns. My work spans structure-aware sentiment reasoning, retrieval-augmented generation, and representation analysis.</p>
       <p>I am interested in the conditions behind a model's answer: which evidence it relies on, what it overlooks, and how internal representations relate to its behavior.</p>
     </div>
