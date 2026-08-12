@@ -57,9 +57,6 @@ redirect_from:
       {% include home-publication-row.html %}
     {%- endfor -%}
   </div>
-  {% if site.author.googlescholar %}
-    <p class="section-note">You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.</p>
-  {% endif %}
 </section>
 
 <section id="education">
