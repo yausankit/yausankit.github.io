@@ -76,7 +76,12 @@
 
 /* 1. Hold the root at the scale the design was drawn at. */
 html.home-shell {
+  /* Single source of truth for the homepage canvas. Keeping this token on
+     html also makes browser overscroll use the current palette background. */
+  --bg: #f0f3f5;
+
   font-size: 16px;
+  background: var(--bg);
 }
 
 body.home-shell {
@@ -91,7 +96,6 @@ body.home-shell {
      palette-e-frost-moon entry, sky tokens from gen_skyline.py's make_css().
      Edit them there, not here.
      ------------------------------------------------------------------------ */
-  --bg: #f0f3f5;
   --panel: #f6f8fa;
   --panel-2: #e8ecf0;
   --line: #d0d8de;
