@@ -82,9 +82,11 @@ html.home-shell {
 
   font-size: 16px;
   background: var(--bg);
+  overscroll-behavior-y: none;
 }
 
 body.home-shell {
+  overscroll-behavior-y: none;
 
   /* ------------------------------------------------------------------------
      Tokens. Palette E (霜月银白) + the 19 --sky-* tokens the inline skyline
