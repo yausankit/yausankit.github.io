@@ -3,7 +3,7 @@ layout: compress
 ---
 
 {%- comment -%}
-Homepage shell: sticky left rail (skyline + identity + section nav) beside the
+Homepage shell: sticky typographic left rail (identity + section nav) beside the
 main column. Styled entirely by _sass/layout/_home_shell.scss.
 
 Deliberately NOT built on _layouts/default.html:
@@ -15,9 +15,9 @@ Deliberately NOT built on _layouts/default.html:
     would give the page two navs listing the same four sections.
   * scripts.html is skipped: it loads main.min.js, which is jQuery + greedy-nav
     + the theme toggle. Greedy-nav needs a masthead, and the toggle needs the
-    button that lives in one. Analytics and comments are both off in _config.yml
-    so those includes render empty. What this page does need is ~60 lines of
-    vanilla JS, loaded on its own below.
+    button that lives in one. Analytics is included directly below because this
+    layout owns its script loading. The small vanilla script handles section
+    highlighting.
 
 Content comes from _pages/about.md. The band and identity strings read from that
 page's front matter, so this layout stays reusable.
@@ -38,22 +38,15 @@ page's front matter, so this layout stays reusable.
 
     <div class="shell">
       <aside>
-        {% include home-skyline.html %}
-
         <div class="ident">
-          <h1>{{ site.author.name | default: site.title }}<span class="caret" aria-hidden="true"></span></h1>
+          <p class="ident-kicker">AI Researcher · Guangzhou</p>
+          <h1>{{ site.author.name | default: site.title }}</h1>
           {% if page.role %}<p class="role">{{ page.role }}</p>{% endif %}
         </div>
 
         <nav aria-label="Sections">
           <ol>
             {%- for item in site.data.navigation.main -%}
-              {%- comment -%}
-                navigation.yml doubles as the masthead source for every other
-                page, so entries are absolute ("/#publications"). Take the
-                fragment for the rail's in-page links, and fall back to the
-                whole URL for any entry that has no fragment.
-              {%- endcomment -%}
               {%- if item.url contains "#" -%}
                 {%- assign frag = item.url | split: "#" | last -%}
                 {%- assign href = "#" | append: frag -%}
@@ -68,24 +61,11 @@ page's front matter, so this layout stays reusable.
         <div class="foot">
           {% if site.author.email %}<a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>{% endif %}
           {% if site.author.googlescholar %}<a href="{{ site.author.googlescholar }}" rel="me noopener">Google Scholar</a>{% endif %}
+          <a class="cv-link" href="{{ base_path }}/assets/files/cv-chenjie-qiu.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">&#8599;</span></a>
         </div>
       </aside>
 
       <main>
-        {% if page.headline %}
-          <div class="band">
-            <h2>{{ page.headline }}</h2>
-            {% if page.tagline %}<p>{{ page.tagline }}</p>{% endif %}
-            {% if page.facts %}
-              <div class="kv">
-                {%- for fact in page.facts -%}
-                  <div>{{ fact.label }}<b>{{ fact.value }}</b></div>
-                {%- endfor -%}
-              </div>
-            {% endif %}
-          </div>
-        {% endif %}
-
         {{ content }}
 
         <footer>
@@ -94,7 +74,8 @@ page's front matter, so this layout stays reusable.
       </main>
     </div>
 
-    <script src="{{ base_path }}/assets/js/home.js" defer></script>
+    {% include analytics.html %}
+    <script src="{{ base_path }}/assets/js/home.js?v=4" defer></script>
 
   </body>
 </html>

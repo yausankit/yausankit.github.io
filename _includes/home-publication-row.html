@@ -27,12 +27,12 @@ them renders exactly as before.
   {%- assign pub_href = post.url | prepend: base_path -%}
 {%- endif -%}
 
-<div class="row">
-  <div class="k">
-    {{ post.date | date: "%Y" }} &middot; {{ post.date | date: "%B" }}
-  </div>
+<div class="row publication-row">
   <div class="v">
-    {% if post.venue %}<span class="tag">{{ post.venue }}</span>{% endif %}
+    <div class="publication-meta">
+      <span class="publication-date">{{ post.date | date: "%Y" }} &middot; {{ post.date | date: "%B" }}</span>
+      {% if post.venue %}<span class="tag">{{ post.venue }}</span>{% endif %}
+    </div>
     <h3><a href="{{ pub_href }}">{{ pub_title }}</a></h3>
     {% if post.authors %}
       <p class="authors">{{ post.authors | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>

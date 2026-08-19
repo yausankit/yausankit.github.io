@@ -9,7 +9,6 @@ venue: 'NAACL 2025 Findings'
 link: 'https://aclanthology.org/2025.findings-naacl.379/'
 doi: '10.18653/v1/2025.findings-naacl.379'
 authors: 'B. Chen, **C. Qiu**, Y. Xie, B. Xu, R. Cai, and Z. Hao'
-contribution: 'Led framework design, experiments, and writing for a staged method that progressively injects global and local syntactic structures into LLM tuning.'
 ---
 
 We introduce a stepwise syntax integration tuning strategy that helps large language models better capture syntactic structure for aspect sentiment quad prediction.

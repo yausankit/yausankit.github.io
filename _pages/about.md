@@ -2,13 +2,7 @@
 layout: home
 permalink: /
 role: "M.S. graduate in Software Engineering, DMIR Lab, Guangdong University of Technology"
-headline: "Evidence, representations, and user state in language models"
-tagline: "Studying how structured evidence, internal representations, and user state shape what language models understand and say."
-facts:
-  - label: "Lab"
-    value: "DMIR, GDUT"
-  - label: "Based in"
-    value: "Guangzhou, Guangdong"
+headline: "Building reliable language models that reason with evidence"
 redirect_from:
   - /about/
   - /about.html
@@ -20,9 +14,9 @@ redirect_from:
   <h2>About Me</h2>
   <div class="about-layout">
     <div class="prose">
-      <p>I hold an M.S. in Software Engineering from Guangdong University of Technology and am based in Guangzhou. My research sits at the intersection of natural language processing, retrieval, and interpretability for large language models.</p>
-      <p>I study how models select and use structured evidence from graphs, tables, long documents, and dialogue history, as well as how affective and user-state signals are represented and carried across turns. My work spans structure-aware sentiment reasoning, retrieval-augmented generation, and representation analysis.</p>
-      <p>I am interested in the conditions behind a model's answer: which evidence it relies on, what it overlooks, and how internal representations relate to its behavior.</p>
+      <p class="about-eyebrow">Structured evidence · Language agents · Interpretability</p>
+      <h3 class="about-headline">{{ page.headline }}</h3>
+      <p class="about-bio">I am an AI researcher based in Guangzhou, with an M.S. in Software Engineering from Guangdong University of Technology. I study how language models and agents organize structured evidence, make decisions, diagnose failures, and determine when verification, repair, or abstention is justified. My work connects external evidence, agent behavior, and internal representations.</p>
     </div>
     <figure class="profile-photo">
       <img src="{{ base_path }}/assets/images/chenjie-qiu-jiuzhaigou.jpg" width="1049" height="1400" loading="lazy" decoding="async" alt="Chenjie Qiu sitting beside a mountain lake" />
