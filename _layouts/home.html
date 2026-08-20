@@ -68,8 +68,9 @@ page's front matter, so this layout stays reusable.
       <main>
         {{ content }}
 
-        <footer>
-          &copy; {{ site.time | date: "%Y" }} {{ site.author.name | default: site.title }}
+        <footer class="site-footer">
+          <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name | default: site.title }}. All rights reserved.</p>
+          <p class="footer-meta">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> and <a href="https://github.com/academicpages/academicpages.github.io">Academic Pages</a> · Last updated {{ "now" | date: "%Y-%m-%d" }}</p>
         </footer>
       </main>
     </div>

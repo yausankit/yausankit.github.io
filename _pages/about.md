@@ -60,14 +60,14 @@ redirect_from:
       <div class="k">2023 &ndash; 2026</div>
       <div class="v">
         <h3>Guangdong University of Technology</h3>
-        <p>M.S. in Software Engineering &mdash; Guangzhou, Guangdong</p>
+        <p>M.S. in Software Engineering &middot; DMIR Lab</p>
       </div>
     </div>
     <div class="row">
       <div class="k">2018 &ndash; 2022</div>
       <div class="v">
         <h3>Guangdong University of Finance</h3>
-        <p>Bachelor's degree in E-Commerce &mdash; Guangzhou, Guangdong</p>
+        <p>Bachelor&rsquo;s in E-Commerce</p>
       </div>
     </div>
   </div>
