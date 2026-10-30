@@ -13,7 +13,7 @@ redirect_from:
   <figure class="profile-photo">
     <img src="{{ base_path }}/assets/images/chenjie-qiu-portrait.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Chenjie Qiu sitting beside a mountain lake" />
   </figure>
-  <p>I am a research assistant at <strong>Singapore Management University (SMU)</strong>, working with <a href="https://dluoedu.github.io/">Prof. Dongsheng Luo</a>. I received my M.S. from <strong>Guangdong University of Technology (GDUT)</strong>, advised by Bingfeng Chen and Boyan Xu in the DMIR Lab. My research focuses on <strong>structured knowledge reasoning</strong> and <strong>self-evolving language agents</strong>, with additional interests in large language model interpretability and affective computing.</p>
+  <p>I am a research assistant at <strong>Singapore Management University (SMU)</strong>, working with <a href="https://dluoedu.github.io/">Prof. Dongsheng Luo</a>. I received my M.S. from <strong>Guangdong University of Technology (GDUT)</strong>, advised by Bingfeng Chen and <a href="https://boyanxu1.github.io/">Boyan Xu</a> in the <a href="https://dmir.gdut.edu.cn/">DMIR Lab</a>. My research focuses on <strong>structured knowledge reasoning</strong> and <strong>self-evolving language agents</strong>, with additional interests in large language model interpretability and affective computing.</p>
   <p class="profile-links">
     {%- if site.author.email -%}<a href="mailto:{{ site.author.email }}">Email</a>{%- endif -%}
     {%- if site.author.googlescholar -%}<a href="{{ site.author.googlescholar }}" rel="me noopener">Google Scholar <span aria-hidden="true">&#8599;</span></a>{%- endif -%}
