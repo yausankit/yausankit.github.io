@@ -4,10 +4,8 @@
 # links. Removing a link prevents it from showing in the header, but does not
 # prevent it from being included in the site.
 #
-# This list also drives the homepage rail nav (_layouts/home.html), which takes
-# the fragment from each URL. Keep entries pointing at "/#<section-id>" so both
-# consumers work; those ids live in _pages/about.md. An entry without a "#" still
-# renders in the rail, as an ordinary cross-page link.
+# Other pages link back to homepage sections through these "/#<section-id>"
+# URLs; those ids live in _pages/about.md.
 
 main:
   - title: "About Me"
@@ -18,6 +16,3 @@ main:
 
   - title: "Publications"
     url: /#publications
-
-  - title: "Education"
-    url: /#education

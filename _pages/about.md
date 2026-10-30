@@ -1,8 +1,7 @@
 ---
 layout: home
 permalink: /
-role: "M.S. graduate in Software Engineering, DMIR Lab, Guangdong University of Technology"
-headline: "Building reliable language models that reason with evidence"
+role: "Research Assistant · Singapore Management University"
 redirect_from:
   - /about/
   - /about.html
@@ -11,64 +10,35 @@ redirect_from:
 {% include base_path %}
 
 <section id="about">
-  <h2>About Me</h2>
-  <div class="about-layout">
-    <div class="prose">
-      <p class="about-eyebrow">Structured evidence · Language agents · Interpretability</p>
-      <h3 class="about-headline">{{ page.headline }}</h3>
-      <p class="about-bio">I am an AI researcher based in Guangzhou, with an M.S. in Software Engineering from Guangdong University of Technology. I study how language models and agents organize structured evidence, make decisions, diagnose failures, and determine when verification, repair, or abstention is justified. My work connects external evidence, agent behavior, and internal representations.</p>
-    </div>
-    <figure class="profile-photo">
-      <img src="{{ base_path }}/assets/images/chenjie-qiu-jiuzhaigou.jpg" width="1049" height="1400" loading="lazy" decoding="async" alt="Chenjie Qiu sitting beside a mountain lake" />
-    </figure>
-  </div>
+  <figure class="profile-photo">
+    <img src="{{ base_path }}/assets/images/chenjie-qiu-portrait.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Chenjie Qiu sitting beside a mountain lake" />
+  </figure>
+  <p>I am a research assistant at <strong>Singapore Management University (SMU)</strong>, working with <a href="https://dluoedu.github.io/">Prof. Dongsheng Luo</a>. I received my M.S. from <strong>Guangdong University of Technology (GDUT)</strong>, advised by Bingfeng Chen and Boyan Xu in the DMIR Lab. My research focuses on <strong>structured knowledge reasoning</strong> and <strong>self-evolving language agents</strong>, with additional interests in large language model interpretability and affective computing.</p>
+  <p class="profile-links">
+    {%- if site.author.email -%}<a href="mailto:{{ site.author.email }}">Email</a>{%- endif -%}
+    {%- if site.author.googlescholar -%}<a href="{{ site.author.googlescholar }}" rel="me noopener">Google Scholar <span aria-hidden="true">&#8599;</span></a>{%- endif -%}
+    {%- if site.author.github -%}<a href="https://github.com/{{ site.author.github }}" rel="me noopener">GitHub <span aria-hidden="true">&#8599;</span></a>{%- endif -%}
+  </p>
 </section>
 
 <section id="interests">
-  <h2>Research Interests</h2>
-  <div class="rows">
-    <div class="row">
-      <div class="k">Knowledge-Aware LLM Systems</div>
-      <div class="v"><p>Developing methods for language models to organize, retrieve, and reason over structured external knowledge from graphs, tables, long documents, and dialogue history, while also exploring latent-space memory and retrieval through model-internal representations.</p></div>
-    </div>
-    <div class="row">
-      <div class="k">Affect-Aware LLM Systems</div>
-      <div class="v"><p>Studying how emotion-related and user-state signals are represented, retained, and carried across multi-turn dialogue, with a focus on internal representations and affective carryover.</p></div>
-    </div>
-  </div>
+  <p>My research asks how language models and agents learn from evidence, feedback, and their own mistakes:</p>
+  <ul class="topics">
+    <li><strong>Structured Knowledge Reasoning:</strong> Retrieval and reasoning over documents, knowledge graphs, tables, and databases, including probing which evidence actually shaped an answer and when to repair, verify, or abstain.</li>
+    <li><strong>Self-Evolving Agents:</strong> Agents that learn from feedback and memory, and benchmarks that test whether they learn a general rule or only a list of special cases.</li>
+  </ul>
+  <p>I am glad to discuss research and collaboration on these topics. Feel free to reach me by email.</p>
 </section>
 
 <section id="publications">
   <h2>Publications</h2>
   {%- comment -%}
-  Rows are generated from _publications/, so adding a paper is still one new
-  markdown file there and nothing here changes. home-publication-row.html is the
-  design's row markup; archive-single.html is the stock academicpages card and
-  would not inherit any of this page's styling.
+  Entries are generated from _publications/, so adding a paper is still one new
+  markdown file there and nothing here changes.
   {%- endcomment -%}
-  <div class="rows">
+  <ol class="pubs">
     {%- for post in site.publications reversed -%}
       {% include home-publication-row.html %}
     {%- endfor -%}
-  </div>
-</section>
-
-<section id="education">
-  <h2>Education</h2>
-  <div class="rows">
-    <div class="row">
-      <div class="k">2023 &ndash; 2026</div>
-      <div class="v">
-        <h3>Guangdong University of Technology</h3>
-        <p>M.S. in Software Engineering &middot; DMIR Lab</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="k">2018 &ndash; 2022</div>
-      <div class="v">
-        <h3>Guangdong University of Finance</h3>
-        <p>Bachelor&rsquo;s in E-Commerce</p>
-      </div>
-    </div>
-  </div>
+  </ol>
 </section>

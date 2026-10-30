@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Chenjie Qiu"
 title_separator          : "-"
 name                     : &name "Chenjie Qiu"
-description              : &description "Chenjie Qiu's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Chenjie Qiu is a research assistant at Singapore Management University working on language agents, retrieval, and interpretability."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://yausankit.github.io
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "yausankit/yausankit.github.io"
@@ -25,9 +25,9 @@ author:
   avatar           :
   name             : "Chenjie Qiu"
   pronouns         : # example: "she/her"  
-  bio              : "NLP & LLM"
+  bio              : "Language agents, retrieval, and interpretability"
   location         : "Guangzhou, Guangdong"
-  employer         :
+  employer         : "Singapore Management University"
   uri              : # URL
   email            : "yausankit@gmail.com"
 
@@ -50,7 +50,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           :
+  github           : "yausankit"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 

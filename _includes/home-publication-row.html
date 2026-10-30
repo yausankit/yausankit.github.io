@@ -1,13 +1,15 @@
 {%- comment -%}
-One publication as a homepage rail row. Expects `post` from the calling loop,
+One publication as a homepage list item. Expects `post` from the calling loop,
 same convention as archive-single.html.
 
-Front matter consumed: date, venue, title, link, excerpt, authors, contribution.
+Front matter consumed: title, link, authors, venue, date, paperurl, codeurl,
+bibtexurl, teaser. All but title are optional. `teaser` is a file name under
+assets/images/papers/, exported large enough to read when enlarged; entries
+without one render as text only.
 
 `authors` is a markdown string so the CV's bolding of the site owner survives
 verbatim ("B. Chen, **C. Qiu**, ..."); it is markdownified and unwrapped the
-same way the title is. Both new fields are optional, so a publication without
-them renders exactly as before.
+same way the title is.
 {%- endcomment -%}
 {% include base_path %}
 
@@ -27,21 +29,27 @@ them renders exactly as before.
   {%- assign pub_href = post.url | prepend: base_path -%}
 {%- endif -%}
 
-<div class="row publication-row">
-  <div class="v">
-    <div class="publication-meta">
-      <span class="publication-date">{{ post.date | date: "%Y" }} &middot; {{ post.date | date: "%B" }}</span>
-      {% if post.venue %}<span class="tag">{{ post.venue }}</span>{% endif %}
-    </div>
-    <h3><a href="{{ pub_href }}">{{ pub_title }}</a></h3>
-    {% if post.authors %}
-      <p class="authors">{{ post.authors | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
-    {% endif %}
-    {% if post.excerpt %}
-      <p>{{ post.excerpt | markdownify | strip_html | strip_newlines | strip }}</p>
-    {% endif %}
-    {% if post.contribution %}
-      <p class="contribution">{{ post.contribution | markdownify | strip_html | strip_newlines | strip }}</p>
-    {% endif %}
+<li class="pub{% if post.teaser %} has-teaser{% endif %}">
+  {%- if post.teaser -%}
+    {%- assign teaser_src = post.teaser | prepend: "/assets/images/papers/" | prepend: base_path -%}
+    {%- comment -%}
+      Links to the full-size figure, so without JS it still opens. home.js turns
+      the click into an in-page enlarged view.
+    {%- endcomment -%}
+    <a class="pub-teaser" href="{{ teaser_src }}" aria-label="Enlarge figure"><img src="{{ teaser_src }}" alt="Figure from {{ pub_title | strip_html | escape }}" loading="lazy" decoding="async"></a>
+  {%- endif -%}
+  <div class="pub-body">
+  <a class="pub-title" href="{{ pub_href }}">{{ pub_title }}</a>
+  {% if post.authors %}
+    <span class="authors">{{ post.authors | markdownify | remove: "<p>" | remove: "</p>" | strip }}</span>
+  {% endif %}
+  <span class="venue">{% if post.venue %}<em>{{ post.venue }}</em>, {% endif %}{{ post.date | date: "%Y" }}</span>
+  {%- if post.paperurl or post.codeurl or post.bibtexurl -%}
+    <span class="pub-links">
+      {%- if post.paperurl -%}<a href="{{ post.paperurl }}">PDF</a>{%- endif -%}
+      {%- if post.codeurl -%}<a href="{{ post.codeurl }}">Code</a>{%- endif -%}
+      {%- if post.bibtexurl -%}<a href="{{ post.bibtexurl }}">BibTeX</a>{%- endif -%}
+    </span>
+  {%- endif -%}
   </div>
-</div>
+</li>
