@@ -31,7 +31,8 @@ Deliberately NOT built on _layouts/default.html:
     {% include head/custom.html %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&text=%E9%82%B1%E8%BE%B0%E6%9D%B0&display=swap">
   </head>
 
   <body class="home-shell">
@@ -40,7 +41,7 @@ Deliberately NOT built on _layouts/default.html:
 
     <div class="home-page">
       <header class="intro">
-        <h1>{{ site.author.name | default: site.title }}</h1>
+        <h1>{{ site.author.name | default: site.title }} <span class="name-zh" lang="zh-CN">邱辰杰</span></h1>
         {% if page.role %}<p class="role">{{ page.role }}</p>{% endif %}
       </header>
 
