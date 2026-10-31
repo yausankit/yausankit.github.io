@@ -3,13 +3,16 @@ One publication as a homepage list item. Expects `post` from the calling loop,
 same convention as archive-single.html.
 
 Front matter consumed: title, link, authors, venue, date, paperurl, codeurl,
-bibtexurl, teaser. All but title are optional. `teaser` is a file name under
+bibtexurl, bibtex, teaser. All but title are optional. `teaser` is a file name under
 assets/images/papers/, exported large enough to read when enlarged; entries
 without one render as text only.
 
 `authors` is a markdown string so the CV's bolding of the site owner survives
 verbatim ("B. Chen, **C. Qiu**, ..."); it is markdownified and unwrapped the
 same way the title is.
+
+`bibtex` is the entry text itself; when present, home.js copies it on click
+instead of following `bibtexurl`, which stays as the no-JS fallback.
 {%- endcomment -%}
 {% include base_path %}
 
@@ -44,11 +47,11 @@ same way the title is.
     <span class="authors">{{ post.authors | markdownify | remove: "<p>" | remove: "</p>" | strip }}</span>
   {% endif %}
   <span class="venue">{% if post.venue %}<em>{{ post.venue }}</em>, {% endif %}{{ post.date | date: "%Y" }}</span>
-  {%- if post.paperurl or post.codeurl or post.bibtexurl -%}
+  {%- if post.paperurl or post.codeurl or post.bibtexurl or post.bibtex -%}
     <span class="pub-links">
       {%- if post.paperurl -%}<a href="{{ post.paperurl }}">PDF</a>{%- endif -%}
       {%- if post.codeurl -%}<a href="{{ post.codeurl }}">Code</a>{%- endif -%}
-      {%- if post.bibtexurl -%}<a href="{{ post.bibtexurl }}">BibTeX</a>{%- endif -%}
+      {%- if post.bibtex -%}<a class="bib-copy" title="Copy BibTeX" href="{{ post.bibtexurl | default: pub_href }}" data-bibtex="{{ post.bibtex | strip | escape }}">BibTeX</a>{%- elsif post.bibtexurl -%}<a href="{{ post.bibtexurl }}">BibTeX</a>{%- endif -%}
     </span>
   {%- endif -%}
   </div>

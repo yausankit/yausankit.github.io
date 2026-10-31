@@ -43,5 +43,34 @@
     }
   }
 
+  /* ------------------------------------------------------------------------
+     Copy a publication's BibTeX on click. The link still points at the .bib
+     source, so it is followed if the clipboard is unavailable or refuses.
+     ------------------------------------------------------------------------ */
+
+  function initBibtexCopy() {
+    var links = document.querySelectorAll('.bib-copy');
+    if (!links.length || !navigator.clipboard) { return; }
+
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener('click', function (event) {
+        var link = this;
+        event.preventDefault();
+        navigator.clipboard.writeText(link.getAttribute('data-bibtex')).then(function () {
+          link.textContent = 'Copied';
+          link.classList.add('is-copied');
+          clearTimeout(link._reset);
+          link._reset = setTimeout(function () {
+            link.textContent = 'BibTeX';
+            link.classList.remove('is-copied');
+          }, 1600);
+        }, function () {
+          window.location.href = link.href;
+        });
+      });
+    }
+  }
+
   initFigureViewer();
+  initBibtexCopy();
 })();

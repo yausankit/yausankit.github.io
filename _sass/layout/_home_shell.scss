@@ -250,6 +250,11 @@ body.home-shell {
     a + a {
       margin-left: 1rem;
     }
+
+    .is-copied {
+      color: var(--muted);
+      text-decoration: none;
+    }
   }
 
   /* Enlarged figure (home.js) ---------------------------------------------- */
