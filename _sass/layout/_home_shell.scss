@@ -73,6 +73,16 @@ body.home-shell {
     max-width: 100%;
   }
 
+  /* Spacing once inherited from the template's base stylesheet. */
+  ul li,
+  ol li {
+    margin-bottom: 0.5em;
+  }
+
+  figure img {
+    margin-bottom: 1em;
+  }
+
   /* Column ---------------------------------------------------------------- */
 
   .home-page {

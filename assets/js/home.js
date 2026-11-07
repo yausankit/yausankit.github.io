@@ -2,10 +2,6 @@
    HOMEPAGE SCRIPT
    Small vanilla enhancements for the custom homepage. Functions are no-ops
    when their target element is absent, so this file is safe to load anywhere.
-
-   Loaded on its own rather than folded into main.min.js: that bundle is
-   jQuery-based and built by a toolchain (npm/uglify) whose output is committed.
-   Nothing here needs jQuery.
    ========================================================================== */
 
 (function () {

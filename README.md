@@ -6,16 +6,17 @@ Source for [yausankit.github.io](https://yausankit.github.io/), a single-page ac
 
 - `_pages/about.md`: homepage copy and sections
 - `_publications/`: publication records rendered on the homepage
-- `_data/navigation.yml`: in-page navigation
+- `_layouts/home.html`: the page shell used by every page (homepage and 404)
 - `assets/images/`: homepage images
 - `_sass/layout/_home_shell.scss`: homepage layout and visual styling
 
 ## Local Preview
 
-With Docker installed:
+With Ruby and Bundler installed:
 
 ```bash
-docker compose up
+bundle install
+bundle exec jekyll serve
 ```
 
 The site is then available at [http://localhost:4000](http://localhost:4000).

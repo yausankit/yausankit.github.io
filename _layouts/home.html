@@ -7,18 +7,16 @@ Homepage: one plain reading column. Name and affiliation sit at the top; the
 intro, links and sections in _pages/about.md follow as ordinary text. Styled
 entirely by _sass/layout/_home_shell.scss.
 
-Deliberately NOT built on _layouts/default.html:
+It is the only page layout on the site (404.md uses it too), so it owns the
+whole document:
 
-  * The design is specified in rem against a 16px root, and layout/reset.scss
-    pushes html to 18px at $medium. The class on <html> lets the stylesheet pin
-    it back, and only a top-level layout can put a class there.
+  * The design is specified in rem against a 16px root; the class on <html>
+    lets the stylesheet pin that.
   * No masthead or section nav. The page is short enough to read top to bottom.
-  * scripts.html is skipped: it loads main.min.js (jQuery + greedy-nav + the
-    theme toggle), none of which this page uses. Analytics is included directly
-    below because this layout owns its script loading. home.js only adds the
-    enlarged figure view.
-  * Source Serif 4 / Source Sans 3 are loaded here so the page sets the same
-    on every OS. The font stacks fall back to system fonts if Google Fonts is
+  * The only script is home.js, which adds the enlarged figure view.
+    Analytics is included directly below.
+  * Newsreader / Source Sans 3 are loaded here so the page sets the same on
+    every OS. The font stacks fall back to system fonts if Google Fonts is
     unreachable.
 {%- endcomment -%}
 
@@ -36,8 +34,6 @@ Deliberately NOT built on _layouts/default.html:
   </head>
 
   <body class="home-shell">
-
-    {% include browser-upgrade.html %}
 
     <div class="home-page">
       <header class="intro">
