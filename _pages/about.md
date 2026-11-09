@@ -42,3 +42,10 @@ redirect_from:
     {%- endfor -%}
   </ol>
 </section>
+
+<section id="service">
+  <h2>Academic Service</h2>
+  <ul class="service">
+    <li><strong>Conference Reviewer:</strong> The Web Conference (WWW) 2027; AAAI Conference on Artificial Intelligence (AAAI) 2027</li>
+  </ul>
+</section>
